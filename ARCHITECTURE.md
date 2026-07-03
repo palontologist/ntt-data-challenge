@@ -1,28 +1,53 @@
-# NTT Data AI Engineering Challenge: Intelligent Drive Interface (IDI)
+# NTT Data AI Engineering Challenge: Agentic RAG for Data Astel
 
-## 🎯 The Vision
-Transform a "cumbersome internal drive" from a graveyard of files into a living knowledge organism. Instead of traditional keyword search or expensive full-text indexing, we implement an **Edge-Native Reasoning Layer** using BabyLLM principles.
+## 🎯 The Challenge
+Build a general-purpose, autonomous RAG pipeline for "Data Astel" that extracts information from a messy shared drive containing text, tables, images, and graphs, handling in-house terminology and complex multi-document aggregation.
 
-## 🏗️ Architecture: The Three-Tiered Drive Agent
+## 🏗️ Agentic RAG Architecture: The "Cognitive Drive"
 
 ### Tier 1: The Looped Instinct Router (~100k params)
-- **Function**: Rapidly classifies user intent (e.g., "Retrieval", "Synthesis", "Action", "Query").
-- **Innovation**: Uses a **Looped Transformer** architecture. By looping activations, we achieve the depth of a 1M parameter model with 10% of the footprint, ensuring near-zero latency on internal hardware.
-- **Output**: Routes the query to the appropriate OKF namespace or tool.
+- **Purpose**: Fast intent classification and routing.
+- **Function**: Analyzes the query to determine the required "Cognitive Path":
+    - `GLOSSARY_EXPANSION`: Query contains in-house terms $\to$ Route to Glossary.
+    - `ATOMIC_RETRIEVAL`: Single fact search $\to$ Route to OKF-RAG.
+    - `SYNTHETIC_AGGREGATION`: Multi-material collation $\to$ Route to Agentic Loop.
+    - `MULTIMODAL_ANALYSIS`: Graph/Image query $\to$ Route to Vision-Tool.
+- **Innovation**: Looped architecture ensures this routing happens in $<100$ms on edge hardware.
 
-### Tier 2: OKF-Powered RAG Engine
-- **Knowledge Representation**: The "cumbersome drive" is mapped into the **Open Knowledge Format (OKF)**. Files are not just indexed; they are converted into markdown documents with YAML frontmatter (tags, owners, timestamps, relationships).
-- **Retrieval**: A hybrid search (Keyword + Semantic) retrieves relevant OKF fragments.
-- **Synthesis**: A distilled MoE (Mixture-of-Experts) model synthesizes the answer from retrieved fragments.
+### Tier 2: The OKF Knowledge Core (Open Knowledge Format)
+- **Normalization**: Converts all drive materials (PDF, Excel, PPT, Images) into **OKF documents** (Markdown + YAML frontmatter).
+- **Structural Mapping**: 
+    - **Text**: Chunked and tagged.
+    - **Tables**: Converted to Markdown tables with column metadata.
+    - **Images/Graphs**: Processed via Multimodal LLMs into descriptive text summaries stored as OKF.
+- **Glossary Layer**: A specialized OKF namespace that maps internal abbreviations $\to$ normal expressions.
 
-### Tier 3: Drive Action Tools (MCP)
-- **Tools**: 
-    - `DriveSearch`: Low-level file system crawl.
-    - `DocSummarizer`: Local distillation of large PDFs/Docs.
-    - `RelationalMapper`: Maps dependencies between files (e.g., "This spec refers to that codebase").
-    - `AutoArchiver`: Proactively suggests OKF restructuring for messy folders.
+### Tier 3: The Agentic Orchestrator (Reasoning Loop)
+Instead of one-shot RAG, the system uses an iterative loop:
+1. **Plan**: Decompose the complex question into sub-queries.
+2. **Execute**: Call OKF-RAG or Vision-Tools for each sub-query.
+3. **Collate**: Aggregate evidence, resolve contradictions, and perform calculations (rounding/units).
+4. **Verify**: Check the final answer against the "evidence basis" extracted from the drive.
 
-## 🚀 Competitive Edge
-1. **Extreme Efficiency**: Looped architectures allow the agent to run locally on workstations without needing a massive GPU cluster.
-2. **Interoperability**: By using OKF, the knowledge is vendor-neutral and human-readable.
-3. **Cognitive Distillation**: We don't just RAG; we distill the "institutional DNA" of the drive into the Instinct model's weights.
+## 🛠️ Technical Pipeline
+```
+User Query (Japanese) 
+    ↓
+Looped Router (Intent)
+    ↓
+Glossary Expansion (Internal Terms → Normal)
+    ↓
+Agentic Planner (Sub-queries) 
+    ↓
+OKF-RAG / Multimodal Extractor (Evidence Retrieval)
+    ↓
+Evidence Synthesizer (Aggregation & Formatting)
+    ↓
+Final Answer (Japanese, <1000 tokens)
+```
+
+## 🚀 Competition Winning Strategy
+1. **Generalizability**: No hard-coding. The system treats the drive as a dynamic OKF store.
+2. **Evidence-Based**: Every answer is backed by a specific OKF file reference.
+3. **Multimodal Grounding**: Graphs and images are not ignored; they are "textualized" into OKF for the LLM to reason over.
+4. **Strict Constraints**: A final formatting layer ensures units, decimal places, and rounding match the prompt's requirements.
