@@ -1,0 +1,11 @@
+torch>=2.0.0
+tutel-moe
+python-dotenv
+fastapi
+uvicorn
+argilla
+transformers
+datasets
+sentencepiece
+tiktoken
+PyYAML
