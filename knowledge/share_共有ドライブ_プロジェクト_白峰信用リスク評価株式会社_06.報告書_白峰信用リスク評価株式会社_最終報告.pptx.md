@@ -1,0 +1,19 @@
+---
+project: "\u767D\u5CF0\u4FE1\u7528\u30EA\u30B9\u30AF\u8A55\u4FA1\u682A\u5F0F\u4F1A\
+  \u793E"
+source: "/home/palontologist/Downloads/dev/ntt_data_challenge/raw_drive/share/\u5171\
+  \u6709\u30C9\u30E9\u30A4\u30D6/\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8/\u767D\u5CF0\
+  \u4FE1\u7528\u30EA\u30B9\u30AF\u8A55\u4FA1\u682A\u5F0F\u4F1A\u793E/06.\u5831\u544A\
+  \u66F8/\u767D\u5CF0\u4FE1\u7528\u30EA\u30B9\u30AF\u8A55\u4FA1\u682A\u5F0F\u4F1A\u793E\
+  _\u6700\u7D42\u5831\u544A.pptx"
+tags:
+- drive_extraction
+- "\u767D\u5CF0\u4FE1\u7528\u30EA\u30B9\u30AF\u8A55\u4FA1\u682A\u5F0F\u4F1A\u793E"
+timestamp: '2026-07-03T09:16:20.559160'
+title: "\u767D\u5CF0\u4FE1\u7528\u30EA\u30B9\u30AF\u8A55\u4FA1\u682A\u5F0F\u4F1A\u793E\
+  _\u6700\u7D42\u5831\u544A.pptx"
+type: material
+
+---
+
+Extracted content from 白峰信用リスク評価株式会社_最終報告.pptx: [Simulation of detailed document text...]

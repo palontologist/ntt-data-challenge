@@ -1,0 +1,30 @@
+0,hr、weekday、weathersit、temp
+1,20日
+2,Recall
+3,"4,394,250円"
+4,hist_gradient_boosting
+5,対象外（契約明記）
+6,Gender=Male、disease=1、Age=68で抽出されたデータに対する平均 / ALP
+7,32歳
+8,"1,168,750円"
+9,QAレビューア：池田 直哉 → 小林 直樹
+10,0値の疑似欠損
+11,Gender=Male、Country=India、target=2
+12,"5,775,000円"
+13,1526
+14,アサインされていない
+15,MINAMINO、SHR、AYM
+16,43日
+17,未連絡
+18,3
+19,渡辺 遥
+20,T09、T10、T11、T12
+21,Attrition = No、Gender = Female、MaritalStatus = Single、EducationField = Human Resources
+22,season
+23,"見込金額（税込）: 4,675,000 JPY"
+24,Attr7
+25,1. データ理解・EDA
+26,train_0077、train_0216、train_0242、train_0722
+27,0.010301
+28,object、string、categoricaldtype の列を候補とし、欠損を除いたユニーク数が50未満ならカテゴリ特徴量として採用している。
+29,3年間

@@ -16,6 +16,7 @@ app = FastAPI(title="NTT Data IDI Agent")
 # Configuration
 KNOWLEDGE_DIR = "knowledge"
 THRESHOLD = 0.7
+TOKEN_LIMIT = 1000 # Strict limit per rules
 
 # Route Mapping
 ROUTE_MAP = {
@@ -32,6 +33,8 @@ instinct_model = LoopedInstinctModel()
 explainer_model = MeaningExplainer()
 okf_loader = OKFLoader(KNOWLEDGE_DIR)
 multimodal_extractor = MultimodalExtractor()
+from api.synthesizer import ResponseSynthesizer
+synthesizer = ResponseSynthesizer()
 
 instinct_model.eval()
 explainer_model.eval()
@@ -51,18 +54,39 @@ def expand_glossary(text: str) -> str:
     if not glossary_docs:
         return text
     
-    expanded_text = text
-    # Simple replacement for demo purposes
-    # In production, this would use a more robust NER or mapping
-    glossary_content = " ".join([d['body'] for d in glossary_docs])
-    # Example: DA-Core -> Data Processing Engine
-    # This is a stub for the actual expansion logic
-    return f"[Expanded] {text} (Using Data Astel Glossary)"
-
-@app.post("/query", response_model=QueryResponse)
-async def handle_query(request: QueryRequest):
-    text = request.text
+    # Build a glossary map from all glossary documents
+    glossary_map = {}
+    for doc in glossary_docs:
+        lines = doc['body'].split('\n')
+        for line in lines:
+            # Look for common glossary patterns: "Term: Meaning", "Term - Meaning", "Term \t Meaning"
+            for separator in [':', ' - ', '\t']:
+                if separator in line:
+                    parts = line.split(separator, 1)
+                    term = parts[0].strip()
+                    meaning = parts[1].strip()
+                    if term and meaning:
+                        glossary_map[term] = meaning
+                        break
     
+    if not glossary_map:
+        return text
+
+    expanded_text = text
+    for term, meaning in glossary_map.items():
+        expanded_text = expanded_text.replace(term, f"{term}({meaning})")
+    
+    return expanded_text
+
+def enforce_token_limit(text: str, limit: int) -> str:
+    """Ensures the output does not exceed the token limit."""
+    tokens = tokenizer.encode(text)
+    if len(tokens) > limit:
+        return tokenizer.decode(tokens[:limit]) + "... [Truncated]"
+    return text
+
+def process_query(text: str, instinct_model, okf_loader, multimodal_extractor, synthesizer, tokenizer):
+    """Unified query processing logic used by both API and CSV generator."""
     # 1. Tier 1: Looped Instinct Router
     tokens = tokenizer.encode(text)
     idx = torch.tensor([tokens], dtype=torch.long)
@@ -75,41 +99,52 @@ async def handle_query(request: QueryRequest):
     route_name = ROUTE_MAP.get(route_val, "EXPERT_QUERY")
     
     # 2. Execution Path based on Route
-    # Step A: Always check if glossary expansion is needed
     processed_text = expand_glossary(text)
     
-    # Step B: RAG / Tool Execution
     evidence = []
-    answer = ""
+    context = ""
     
     if route_name == "MULTIMODAL_ANALYSIS":
-        # Simulate calling multimodal extractor
-        analysis = multimodal_extractor.process_material("drive/graph_01.png")
-        evidence.append("graph_01.png")
-        answer = f"Based on the graph analysis: {analysis}"
+        # Search for image-like documents related to the query
+        relevant_docs = okf_loader.search(text, top_k=5)
+        context_parts = []
+        for doc in relevant_docs:
+            if any(ext in doc['path'] for ext in ['.png', '.jpg', '.jpeg', '.md']):
+                analysis = multimodal_extractor.process_material(doc['path'])
+                evidence.append(doc['path'])
+                context_parts.append(analysis)
+        
+        context = "\n".join(context_parts) if context_parts else "画像解析の結果、該当する情報は見つかりませんでした。"
     
     elif route_name == "SYNTHETIC_AGGREGATION":
-        # Agentic Loop: Multi-step retrieval
-        docs = okf_loader.search(processed_text)
+        docs = okf_loader.search(processed_text, top_k=5)
         evidence = [d['path'] for d in docs]
-        context = "\n".join([d['body'] for d in docs])
-        answer = f"Aggregation of multiple materials:\n{context[:200]}...\nConclusion: The aggregated data indicates a positive trend."
+        context = "\n".join([f"Source: {d['path']}\nContent: {d['body']}" for d in docs])
     
     else: # ATOMIC_RETRIEVAL or EXPERT_QUERY
-        docs = okf_loader.search(processed_text)
+        docs = okf_loader.search(processed_text, top_k=3)
         evidence = [d['path'] for d in docs]
-        context = "\n".join([d['body'] for d in docs]) if docs else "No evidence found."
-        answer = f"Based on the drive evidence: {context[:200]}..."
+        context = "\n".join([f"Source: {d['path']}\nContent: {d['body']}" for d in docs]) if docs else "該当する情報が見つかりませんでした。"
 
-    # 3. Final Formatting (Simulated Japanese Output)
-    final_answer_jp = f"[日本語回答] {answer} (根拠: {', '.join(evidence)})"
+    # 3. Final Synthesis
+    final_answer_jp = synthesizer.synthesize(text, context, evidence)
+    final_answer_jp = enforce_token_limit(final_answer_jp, TOKEN_LIMIT)
+    
+    return route_name, score_val, final_answer_jp, evidence
 
+@app.post("/query", response_model=QueryResponse)
+async def handle_query(request: QueryRequest):
+    text = request.text
+    route_name, score_val, final_answer_jp, evidence = process_query(
+        text, instinct_model, okf_loader, multimodal_extractor, synthesizer, tokenizer
+    )
     return QueryResponse(
         route=route_name,
         confidence=score_val,
         answer_jp=final_answer_jp,
         evidence_sources=evidence
     )
+
 
 if __name__ == "__main__":
     import uvicorn

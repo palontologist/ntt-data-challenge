@@ -15,11 +15,12 @@ Build a general-purpose, autonomous RAG pipeline for "Data Astel" that extracts 
 - **Innovation**: Looped architecture ensures this routing happens in $<100$ms on edge hardware.
 
 ### Tier 2: The OKF Knowledge Core (Open Knowledge Format)
-- **Normalization**: Converts all drive materials (PDF, Excel, PPT, Images) into **OKF documents** (Markdown + YAML frontmatter).
+- **Normalization & Linearization**: Converts all drive materials (PDF, Excel, PPT, Images) into **OKF documents**. 
+- **olmOCR Integration**: Instead of basic OCR, we use a **VLM-based Linearization pipeline (inspired by olmOCR)**. This ensures that complex layouts, multi-column PDFs, and graphs are converted into clean, readable Markdown while preserving the natural reading order and structural integrity.
 - **Structural Mapping**: 
     - **Text**: Chunked and tagged.
-    - **Tables**: Converted to Markdown tables with column metadata.
-    - **Images/Graphs**: Processed via Multimodal LLMs into descriptive text summaries stored as OKF.
+    - **Tables**: Linearized into Markdown tables with column metadata.
+    - **Images/Graphs**: Processed via Vision-LLMs into descriptive text summaries stored as OKF.
 - **Glossary Layer**: A specialized OKF namespace that maps internal abbreviations $\to$ normal expressions.
 
 ### Tier 3: The Agentic Orchestrator (Reasoning Loop)

@@ -1,0 +1,28 @@
+---
+project: "\u533B\u7642\u6CD5\u4EBA\u793E\u56E3 \u6052\u4E00\u4F1A \u304B\u3048\u3066\
+  \u3099\u7DCF\u5408\u75C5\u9662"
+source: "/home/palontologist/Downloads/dev/ntt_data_challenge/raw_drive/share/\u5171\
+  \u6709\u30C9\u30E9\u30A4\u30D6/\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8/\u533B\u7642\
+  \u6CD5\u4EBA\u793E\u56E3 \u6052\u4E00\u4F1A \u304B\u3048\u3066\u3099\u7DCF\u5408\
+  \u75C5\u9662/04.\u5206\u6790/analysis_outputs/experiments/leaderboard.csv"
+tags:
+- drive_extraction
+- "\u533B\u7642\u6CD5\u4EBA\u793E\u56E3 \u6052\u4E00\u4F1A \u304B\u3048\u3066\u3099\
+  \u7DCF\u5408\u75C5\u9662"
+timestamp: '2026-07-03T09:16:20.880119'
+title: leaderboard.csv
+type: material
+
+---
+
+trial_index | trial_role | planner_stage | improves_on | trial_goal | selection_reason | change_summary | status | model_type | use_date_features | use_cyclical_time_features | random_state | test_size | split_strategy | transform_target | task_type | primary_metric | primary_value | secondary_metric | secondary_value
+9 | target_encoded_hgb_tuned | tuning | target_encoded_hgb | Apply a conservative regularization pass to histogram boosting on the encoded representation. | Stage one more HGB variant before the final best-known configuration. | Tighten leaf size and iteration budget for a more conservative encoded booster. | ok | hist_gradient_boosting | True | False | 42 | 0.2 | random_holdout | none | classification | f1_macro | 0.82915824 | accuracy | 0.83285714
+7 | target_encoded_hgb | targeted_improvement | target_encoded_linear | Use histogram boosting on ordered plus target-encoded features only. | Exploration showed this family is the best path toward the current practical ceiling. | Switch to histogram boosting. | Drop original categorical columns after target encoding. | Enable validation-based early stopping. | ok | hist_gradient_boosting | True | False | 42 | 0.2 | random_holdout | none | classification | f1_macro | 0.82777171 | accuracy | 0.83142857
+10 | final_goal_hgb | final_candidate | target_encoded_hgb_tuned | Final goal trial that mirrors the strongest exploratory path for this dataset. | Use the best exploratory setting as the intended end point for the 10-trial storyline. | Use ordered features and class target encoding. | Use histogram boosting with the best exploratory regularization settings. | ok | hist_gradient_boosting | True | False | 42 | 0.2 | random_holdout | none | classification | f1_macro | 0.82193346 | accuracy | 0.82571429
+8 | target_encoded_rf_regularized | tuning | target_encoded_hgb | Keep one regularized forest as a late counterfactual against the final boosting candidate. | Compare the final boosting path against one regularized tree ensemble without letting a seed-only change become the champion. | Use a shallower forest with larger leaves on the encoded representation. | ok | random_forest | True | False | 42 | 0.2 | random_holdout | none | classification | f1_macro | 0.81668553 | accuracy | 0.81857143
+4 | threshold_tuned_linear | decision_tuning | richer_linear_baseline | Tune validation-time class decision weights on the richer linear model. | Macro-F1 can improve without changing the model family when class decisions are rebalanced. | Keep the richer balanced linear model. | Tune class decision weights on validation predictions. | ok | linear_baseline | True | False | 42 | 0.2 | random_holdout | none | classification | f1_macro | 0.73296712 | accuracy | 0.73571429
+6 | target_encoded_linear | feature_search | ordered_linear | Add class target encoding features on top of the ordered representation in a compact linear setup. | Class-probability encodings are the strongest exploratory signal found for this dataset. | Add class target encoding features. | Drop original categorical columns to keep the linear model compact. | ok | linear_baseline | True | False | 42 | 0.2 | random_holdout | none | classification | f1_macro | 0.71491923 | accuracy | 0.73000000
+5 | ordered_linear | feature_search | richer_linear_baseline | Add ordered numerical features for age, experience, and education. | This dataset has strong ordinal signal in age and experience buckets. | Add ordered features for age, experience, and education. | Keep richer categorical coverage. | ok | linear_baseline | True | False | 42 | 0.2 | random_holdout | none | classification | f1_macro | 0.71268999 | accuracy | 0.72714286
+3 | richer_linear_baseline | feature_search | linear_baseline_balanced | Reintroduce richer categorical coverage and frequency features for the linear model. | Recover informative categorical signal before moving to heavier model families. | Raise categorical limit to 100. | Enable rare-category grouping and frequency features. | ok | linear_baseline | True | False | 42 | 0.2 | random_holdout | none | classification | f1_macro | 0.71268999 | accuracy | 0.72714286
+2 | linear_baseline_balanced | targeted_improvement | linear_baseline | Improve macro-F1 by adding class balancing to the simple baseline. | Start from a deliberately simple baseline, then add class balancing as the first controlled improvement. | Add class_weight=balanced to the simple linear baseline. | ok | linear_baseline | True | False | 42 | 0.2 | random_holdout | none | classification | f1_macro | 0.71268999 | accuracy | 0.72714286
+1 | linear_baseline | baseline |  | Reference baseline with the simplest explainable model. | Always fix T01 as the reproducible reference point. | Use a deliberately simple linear baseline with limited categorical coverage. | ok | linear_baseline | True | False | 42 | 0.2 | random_holdout | none | classification | f1_macro | 0.68549801 | accuracy | 0.71857143

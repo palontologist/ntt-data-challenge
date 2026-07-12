@@ -17,7 +17,7 @@ class LoopedInstinctModel(nn.Module):
     
     def __init__(
         self,
-        vocab_size: int = 8192,
+        vocab_size: int = 50257,
         embed_dim: int = 128,
         num_heads: int = 4,
         num_loops: int = 4, # The 'depth' is now a loop count, not layer count
@@ -50,6 +50,11 @@ class LoopedInstinctModel(nn.Module):
 
     def forward(self, idx: torch.Tensor):
         B, T = idx.shape
+        
+        # Truncate to max_seq_len
+        if T > self.pos_embed.num_embeddings:
+            idx = idx[:, :self.pos_embed.num_embeddings]
+            T = self.pos_embed.num_embeddings
 
         # Embeddings
         token_emb = self.token_embed(idx)
