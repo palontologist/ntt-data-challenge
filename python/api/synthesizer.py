@@ -1,21 +1,38 @@
 import os
+import time
 from openai import OpenAI
+import google.generativeai as genai
 from typing import List, Dict, Any
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class ResponseSynthesizer:
-    """Synthesizes final answers from retrieved OKF context using a high-end LLM."""
+    """Synthesizes final answers from retrieved OKF context using high-end LLMs."""
     
-    def __init__(self, api_key: str = None, model: str = None, base_url: str = None):
-        self.api_key = api_key or os.getenv("OPENAI_API_KEY")
-        self.model = model or os.getenv("OPENAI_MODEL", "gpt-4o")
-        self.base_url = base_url or os.getenv("OPENAI_BASE_URL")
-        if self.api_key:
-            self.client = OpenAI(
-                api_key=self.api_key,
-                base_url=self.base_url
-            )
-        else:
-            self.client = None
+    def __init__(self, api_key: str = None, model: str = None, base_url: str = None, provider: str = None):
+        # Load provider from env if not specified
+        self.provider = provider or os.getenv("LLM_PROVIDER", "openai").lower()
+        
+        if self.provider == "google":
+            self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
+            self.model_name = model or os.getenv("GOOGLE_MODEL", "gemini-1.5-pro")
+            if self.api_key:
+                genai.configure(api_key=self.api_key)
+                self.client = genai.GenerativeModel(self.model_name)
+            else:
+                self.client = None
+        else: # default to openai
+            self.api_key = api_key or os.getenv("OPENAI_API_KEY")
+            self.model = model or os.getenv("OPENAI_MODEL", "gpt-4o")
+            self.base_url = base_url or os.getenv("OPENAI_BASE_URL")
+            if self.api_key:
+                self.client = OpenAI(
+                    api_key=self.api_key,
+                    base_url=self.base_url
+                )
+            else:
+                self.client = None
 
     def synthesize(self, question: str, context: str, evidence_paths: List[str]) -> str:
         """
@@ -24,7 +41,10 @@ class ResponseSynthesizer:
         if not self.client:
             return self._simulated_synthesis(question, context, evidence_paths)
 
-        prompt = f"""あなたはデータアステル社の社内AIアシスタントです。
+        # For Google models, we use a system instruction parameter for better adherence
+        # and a separate user prompt.
+        
+        system_instruction = """あなたはデータアステル社の社内AIアシスタントです。
 提供された【コンテキスト】のみを根拠にして、ユーザーの【質問】に日本語で回答してください。
 
 # 制約事項:
@@ -33,27 +53,49 @@ class ResponseSynthesizer:
 3. **形式の遵守**: 質問で指定された形式、単位、小数桁、丸め方がある場合は厳密に従ってください。
 4. **識別子の維持**: タスクID、アクションIDなどの識別子は、資料の表記通りに記載してください。
 5. **自然な表現**: 社内用語・略称は、設問で指定がない限り、通常の表現に展開して回答してください。
-6. **簡潔さ**: 回答は簡潔に、結論から述べてください。
+6. **簡潔さ**: 回答は簡潔に、結論から述べてください。"""
 
-# 質問:
-{question}
+        user_prompt = f"# 質問:\n{question}\n\n# コンテキスト:\n{context}\n\n# 回答:"
 
-# コンテキスト:
-{context}
+        max_retries = 5
+        retry_delay = 30 # Seconds to wait on 429
 
-# 回答:
-"""
-        try:
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=[{"role": "system", "content": "You are a professional document QA assistant."},
-                          {"role": "user", "content": prompt}],
-                temperature=0,
-            )
-            return response.choices[0].message.content.strip()
-        except Exception as e:
-            print(f"Synthesis error: {e}")
-            return self._simulated_synthesis(question, context, evidence_paths)
+        for attempt in range(max_retries):
+            try:
+                if self.provider == "google":
+                    # Use a fresh model instance with system_instruction for better control
+                    model = genai.GenerativeModel(
+                        model_name=self.model_name,
+                        system_instruction=system_instruction
+                    )
+                    response = model.generate_content(
+                        user_prompt,
+                        generation_config=genai.types.GenerationConfig(
+                            temperature=0,
+                        )
+                    )
+                    return response.text.strip()
+                else:
+                    response = self.client.chat.completions.create(
+                        model=self.model,
+                        messages=[{"role": "system", "content": system_instruction},
+                                   {"role": "user", "content": user_prompt}],
+                        temperature=0,
+                    )
+                    return response.choices[0].message.content.strip()
+            except Exception as e:
+                error_msg = str(e)
+                if "429" in error_msg or "quota" in error_msg.lower():
+                    if attempt < max_retries - 1:
+                        print(f"Rate limit hit. Retrying in {retry_delay}s... (Attempt {attempt+1}/{max_retries})")
+                        time.sleep(retry_delay)
+                        retry_delay *= 2 # Exponential backoff
+                        continue
+                print(f"Synthesis error ({self.provider}): {e}")
+                break
+        
+        return self._simulated_synthesis(question, context, evidence_paths)
+
 
     def _simulated_synthesis(self, question: str, context: str, evidence_paths: List[str]) -> str:
         """Provides a higher-quality fallback response when API key is missing by utilizing the context."""
