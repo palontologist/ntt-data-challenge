@@ -1,4 +1,3 @@
-﻿index,answer
 0,hr、weekday、weathersit、temp
 1,20日
 2,Recall
@@ -29,73 +28,862 @@
 27,0.010301
 28,object、string、categoricaldtype の列を候補とし、欠損を除いたユニーク数が50未満ならカテゴリ特徴量として採用している。
 29,3年間
-30,該当する情報が見つかりませんでした。
-31,"5,000,000円"
-32,該当する情報が見つかりませんでした。
-33,該当する情報が見つかりませんでした。
-34,該当する情報が見つかりませんでした。
-35,該当する情報が見つかりませんでした。
-36,該当する情報が見つかりませんでした。
-37,"5,000,000円"
-38,"5,000,000円"
-39,該当する情報が見つかりませんでした。
-40,該当する情報が見つかりませんでした。
-41,該当する情報が見つかりませんでした。
-42,該当する情報が見つかりませんでした。
-43,該当する情報が見つかりませんでした。
-44,該当する情報が見つかりませんでした。
-45,該当する情報が見つかりませんでした。
-46,"5,000,000円"
-47,該当する情報が見つかりませんでした。
-48,該当する情報が見つかりませんでした。
-49,該当する情報が見つかりませんでした。
-50,該当する情報が見つかりませんでした。
-51,2025-06-15
-52,"5,000,000円"
-53,該当する情報が見つかりませんでした。
-54,該当する情報が見つかりませんでした。
-55,該当する情報が見つかりませんでした。
-56,該当する情報が見つかりませんでした。
-57,該当する情報が見つかりませんでした。
-58,該当する情報が見つかりませんでした。
-59,"5,000,000円"
-60,該当する情報が見つかりませんでした。
-61,該当する情報が見つかりませんでした。
-62,該当する情報が見つかりませんでした。
-63,該当する情報が見つかりませんでした。
-64,該当する情報が見つかりませんでした。
-65,該当する情報が見つかりませんでした。
-66,該当する情報が見つかりませんでした。
-67,"5,000,000円"
-68,該当する情報が見つかりませんでした。
-69,該当する情報が見つかりませんでした。
-70,該当する情報が見つかりませんでした。
-71,該当する情報が見つかりませんでした。
-72,該当する情報が見つかりませんでした。
-73,該当する情報が見つかりませんでした。
-74,該当する情報が見つかりませんでした。
-75,該当する情報が見つかりませんでした。
-76,"5,000,000円"
-77,該当する情報が見つかりませんでした。
-78,"5,000,000円"
-79,該当する情報が見つかりませんでした。
-80,該当する情報が見つかりませんでした。
-81,"5,000,000円"
-82,該当する情報が見つかりませんでした。
-83,該当する情報が見つかりませんでした。
-84,該当する情報が見つかりませんでした。
-85,目標の80%
-86,"5,000,000円"
-87,該当する情報が見つかりませんでした。
-88,該当する情報が見つかりませんでした。
-89,2025-06-15
-90,該当する情報が見つかりませんでした。
-91,該当する情報が見つかりませんでした。
-92,該当する情報が見つかりませんでした。
-93,該当する情報が見つかりませんでした。
-94,該当する情報が見つかりませんでした。
-95,該当する情報が見つかりませんでした。
-96,該当する情報が見つかりませんでした。
-97,該当する情報が見つかりませんでした。
-98,該当する情報が見つかりませんでした。
-99,該当する情報が見つかりませんでした。
+30,"*   User Question: Calculate the percentage of rows in Aoba Credit Management's analysis data where `standardized loan_amnt < 0`, `purpose = 'credit_card'`, and `loan_amnt > average loan_amnt for purpose = 'credit_card'`. Round to two decimal places.
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow format/units/decimal places if specified.
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Concise, conclusion first.
+
+    *   The context provided is ""該当する情報が見つかりませんでした。""
+    *   The question asks for a specific calculation based on data.
+    *   Since the data required to perform the calculation is not in the context, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+31,"*   Role: Internal AI assistant for Data Astel.
+    *   Constraint 1: Use *only* the provided [Context]. Do not include outside information or infer.
+    *   Constraint 2: If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+    *   Constraint 3: Follow specific formats/units/rounding if requested.
+    *   Constraint 4: Maintain identifiers.
+    *   Constraint 5: Use natural expressions for abbreviations unless specified.
+    *   Constraint 6: Be concise and start with the conclusion.
+
+    *   Question: Find the project with the highest contract amount (tax included) per line of analysis data within fixed-amount contracts. Provide the main abbreviation and the amount per line (rounded up to the nearest yen).
+    *   Context: ""該当する情報が見つかりませんでした。"" (No applicable information was found.)
+
+    *   The context explicitly states that no information was found.
+    *   According to Constraint 2, if no information is found, I must answer ""該当するものはありません"".
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+32,該当するものはありません。
+33,"*   User Question: Find the y-value of the blue line at x=3 in Graph 2 of ""青潮モビリティサービスの基礎分析.docx"", rounded to the 5th decimal place.
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/decimal places (if applicable).
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Therefore, I cannot answer the specific value requested.
+
+    *   According to Constraint 2: ""該当するものはありません"" (There is nothing applicable).
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+34,"*   User Question: ""Extract the AIs that were incomplete at M01 but completed by M02 in MINAMINO, which are assigned to Ito-san.""
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing that matches).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and state the conclusion first.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding MINAMINO, M01, M02, or Ito-san, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing that matches).
+該当するものはありません。"
+35,京橋信用ソリューションズ株式会社の分析結果において、F1スコア（f1_macro）でgradient_boosting（0.72242661）に次ぐ順位のモデルのAccuracyは、0.90527092です。
+36,該当するものはありません。
+37,"*   User Question: Calculate the hourly decrease amount in AOBM, defined as (Estimated Amount (incl. tax) - Confirmed Amount (incl. tax)) / (ESTH - ACTH).
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information to perform the calculation, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+38,"*   Role: Internal AI assistant for Data Astel.
+    *   Constraint 1: Use *only* the provided [Context]. Do not include outside information or infer.
+    *   Constraint 2: If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+    *   Constraint 3: Follow specific formats/units if requested.
+    *   Constraint 4: Maintain identifiers as written.
+    *   Constraint 5: Use natural expressions for abbreviations unless specified.
+    *   Constraint 6: Be concise and start with the conclusion.
+
+    *   Question: List all projects requiring ""APR-M3"" based on internal APR management using their abbreviations, and provide the total contract amount (including tax).
+    *   Context: ""該当する情報が見つかりませんでした。"" (No applicable information was found.)
+
+    *   The context explicitly states that no information was found.
+    *   According to Constraint 2, if no information is found, I must answer ""該当するものはありません"".
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+39,"*   User Question: ""青潮モビリティサービスのtrain.xlsxのSheet1にあるグラフ1はどのカラムを可視化したものですか。"" (Which column is visualized in Graph 1 in Sheet1 of train.xlsx for Aoshio Mobility Service?)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and state the conclusion first.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding ""青潮モビリティサービスのtrain.xlsx"" or ""グラフ1"", I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+40,"*   User Question: ""Identify the top 3 months with the highest total settlement amounts for projects existing as of July 1, 2026, and provide the total amounts for those months.""
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding projects, dates, or settlement amounts, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+41,"*   User Question: ""AOBMのPLANにおいて、加藤さんが担当者に含まれるタスクIDはいくつありますか。"" (In the AOBM PLAN, how many task IDs have Kato-san as a person in charge?)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context explicitly states ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Therefore, I cannot answer the specific question about Kato-san's task IDs because the information is missing from the provided context.
+
+    *   According to Constraint 2: ""該当するものはありません"" (There is nothing applicable).
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+42,"該当するものはありません。
+
+提供されたコンテキストには「train.xlsxのSheet1」に関する情報は含まれておらず、記載されているのは「train.csv」のカラム説明のみです。"
+43,"*   User Question: ""東都のCTにおいて、甲側の主担当者をフルネームで教えてください。"" (In Toto's CT, please tell me the full name of the main person in charge on Party A's side.)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strict adherence to context (do not include info not in context).
+        2.  If no info is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow format/units/etc.
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context explicitly states ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Therefore, I cannot provide the name.
+
+    *   According to Constraint 2: ""該当するものはありません"" (There is nothing applicable).
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+44,"*   User Question: ""IMにあるFMにおいて、佐藤さんから見て右側に座っている人の名前をすべて挙げてください。"" (In the FM in IM, please list all the names of the people sitting to the right of Mr./Ms. Sato.)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information about ""IM"", ""FM"", or ""佐藤さん"" (Sato), I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+45,該当するものはありません。
+46,"*   User Question: ""着手金が最も高い案件について、その案件のESの内線番号を教えてください。"" (Tell me the ES extension number for the project with the highest initial fee.)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Therefore, I cannot answer the question about the project with the highest initial fee or its ES extension number.
+
+    *   According to Constraint 2: ""該当するものはありません"" (There is nothing applicable).
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+47,"*   User Question: Find the construction year of the real estate property that the predicted value (in the yellow highlighted cells of `train.xlsx` for 青嶺不動産アセットマネジメント) refers to.
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"".
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context provided is ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   The question asks for a specific piece of information (construction year) from a specific file (`train.xlsx`).
+    *   Since the context contains no information about `train.xlsx` or the construction year, I must follow Constraint #2.
+
+    *   Constraint #2 says: ""条件に合う情報が見つからない場合は、「該当するものはありません」と明確に回答してください。"" (If information matching the conditions is not found, clearly answer ""該当するものはありません"".)
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+48,"*   User Question: In the document ""青嶺不動産アセットマネジメントのニューヨーク不動産市場の最新動向調査.pdf"", which price range has the smallest absolute increase from the current tax rate among the proposed new condominium tax rates?
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context provided is ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Since the context contains no information about the document or the tax rates, I cannot answer the question using the provided context.
+
+    *   According to Constraint 2: ""If no information is found, answer '該当するものはありません' (There is nothing applicable).""
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+49,"*   User Question: ""Extract the parts with comments exactly as they are from the meeting minutes of the Toto Jinzai Platform (東都人材プラットフォーム).""
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding the ""Toto Jinzai Platform meeting minutes"" or ""comments,"" I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+50,"*   User Question: What is the difference between the 90th percentile and the median of the annual base salary for data scientists published by Salary.com in the Toto Jinzai Platform Data Scientist Survey?
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding the specific salary data requested, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+51,"*   User Question: In ""白峰信用リスク評価の提案書.pptx"", in which week from the project start is the ""model enhancement (explainability/segment analysis)"" scheduled to be executed?
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding the schedule for ""model enhancement (explainability/segment analysis)"", I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+52,該当するものはありません。
+53,"*   User Question: ""TOTOのFR書にて記載のある選択特徴量のうち、ENG-FTはいくつありますか。"" (How many ENG-FT are among the selected features described in TOTO's FR document?)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and state the conclusion first.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding TOTO's FR document or ENG-FT, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+54,"*   User Question: ""In Graph 1 of '青潮モビリティサービスの基礎分析.docx', what is the value of y when x=3? Please answer to the 5th decimal place.""
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/decimal places (if applicable).
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context explicitly states ""該当する情報が見つかりませんでした。"" (No relevant information was found).
+    *   The question asks for a specific value from a specific document/graph.
+    *   Since the context contains no information about the document or the graph, I cannot answer the question using the provided context.
+
+    *   According to Constraint 2: ""If no information is found, answer '該当するものはありません' (There is nothing applicable).""
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+55,"*   User Question: ""Among the post-settlement projects (事後精算案件), identify the project with the largest discrepancy between the estimated man-hours at the time of proposal and the actual man-hours reported in the final report, and provide its main abbreviation (主略称).""
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing that matches).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding projects, man-hours, or discrepancies, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing that matches).
+該当するものはありません。"
+56,該当するものはありません。
+57,該当するものはありません。
+58,"*   User Question: ""社内管理フォルダにあるFMにおいて、井上さんの向かいに座っている方のEXTを教えてください。"" (In the FM in the internal management folder, please tell me the EXT of the person sitting opposite Inoue-san.)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding ""Inoue-san"" or ""EXT"" or ""seating arrangements,"" I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+59,"*   User Question: ""京ソのPP_final.pptxにおいて、この案件にかかる金額の提示がまとまっているのは何ページですか。"" (In Kyoso's PP_final.pptx, on which page is the presentation of the amount for this project summarized?)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context says no information was found, I must follow Constraint #2.
+    *   Constraint #2: ""該当するものはありません"" (There is nothing applicable).
+
+    *   Answer: 該当するものはありません。
+該当するものはありません。"
+60,"*   User Question: Extract all IDs listed as unfinished items (未完事項) in the final report materials of ""白峰信用リスク評価"" (Shiramine Credit Risk Assessment).
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and state the conclusion first.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context says no information was found, according to Constraint 2, I must answer ""該当するものはありません"".
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+61,"*   User Question: What are the values of `n_estimators`, `learning_rate`, and `random_state` passed to the gradient boosting model in the Kyobashi Credit Solutions analysis code? Include values applied at runtime even if not explicitly in the config file.
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context provided is ""該当する情報が見つかりませんでした。""
+    *   The question asks for specific values from a specific code/context.
+    *   Since the context contains no information about the analysis code or the parameters, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+62,"*   User Question: ""What is the setting difference causing the score difference between the top two models in the final report of Aoba Credit Management?"" (青葉与信マネジメントの最終報告資料における、モデル比較で上位2件のスコア差を生んでいる設定差分は何ですか。)
+    *   Context: ""No relevant information was found."" (該当する情報が見つかりませんでした。)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and state the conclusion first.
+
+    *   The context provided is ""該当する情報が見つかりませんでした。"" (No relevant information was found).
+    *   The question asks for specific details about a report and model comparison.
+    *   Since the context contains no information regarding ""Aoba Credit Management"" or ""model comparison,"" I must follow Constraint #2.
+
+    *   Constraint #2 says: ""If no information is found that meets the conditions, clearly answer '該当するものはありません'.""
+
+    *   Answer: 該当するものはありません。
+該当するものはありません。"
+63,"*   User Question: What is the predicted value for `id=0` using the regression coefficients calculated in `train.xlsx` of ""青葉与信マネジメント"", calculated to 5 decimal places?
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/decimal places.
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding ""青葉与信マネジメント"", ""train.xlsx"", ""回帰係数"" (regression coefficients), or ""id=0"", I must follow Constraint #2.
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+64,"*   User Question: ""What is the total estimated man-hours for implementing future Phase A and Phase B in the Aoshio Mobility Service final report PDF?"" (青潮モビリティサービスの最終報告PDFにおいて、将来のフェーズAとフェーズBを実施した場合の想定工数は合計で何時間ですか。)
+    *   Context: ""No relevant information was found."" (該当する情報が見つかりませんでした。)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and state the conclusion first.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding the man-hours for Phase A and Phase B, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+65,"*   User Question: ""In the `train.xlsx` of 白峰信用リスク評価 (Shiramine Credit Risk Assessment), in the displayed correlation coefficient sheet, what are the conditions for the cells highlighted in yellow?""
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context provided is ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   The question asks for specific details about a file (`train.xlsx`) and a specific sheet/highlighting condition.
+    *   Since the context contains no information about `train.xlsx` or the yellow highlights, I must follow Constraint #2.
+
+    *   Constraint #2 says: ""If no information is found, answer '該当するものはありません' (There is nothing applicable).""
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+66,"*   User Question: ""京橋信用ソリューションズのEDAの日付分析の可視化において、件数が最も高いのは何日ですか。"" (In the EDA date analysis visualization for Kyobashi Shinkyo Solutions, which day has the highest number of cases?)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and state the conclusion first.
+
+    *   The context explicitly states ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Therefore, I cannot answer the specific question about the date with the highest number of cases.
+
+    *   According to Constraint 2: ""該当するものはありません"" (There is nothing applicable).
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+67,"*   User Question: List all project abbreviations (案件略称) for completed projects (完了案件) that fall under the internal management APR category ""APR-M2"" and have different amounts between the proposal stage (提案時金額) and the FR stage (FR時の金額).
+    *   Context: ""該当する情報が見つかりませんでした。"" (No corresponding information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing that matches).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No corresponding information was found.)
+
+    *   Since the context contains no information regarding the specific projects requested, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing that matches).
+該当するものはありません。"
+68,"*   User Question: Find the ""Investment Implementation Coefficient"" (投資実装係数) in the PDF ""東都人材プラットフォームのデータサイエンス市場の未来予測.pdf"", substitute the numerical values from the page where the formula is described, and provide the coefficient as a decimal.
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/decimals (not applicable here as no values exist).
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context provided is ""該当する情報が見つかりませんでした。""
+    *   The question asks for a specific calculation based on a specific document.
+    *   Since the context contains no information about the document or the formula, I cannot perform the calculation.
+
+    *   According to Constraint 2: ""該当するものはありません"" (There is nothing applicable).
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+69,"*   User Question: ""In the final report materials for Shiramine Credit Risk Assessment, during which week to which week is the pilot operation scheduled to be implemented in the production schedule?"" (白峰信用リスク評価の最終報告資料において、パイロット運用は本番化スケジュール上で第何週目から第何週目に実施予定ですか。)
+    *   Context: ""No relevant information was found."" (該当する情報が見つかりませんでした。)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and state the conclusion first.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding the pilot operation schedule for Shiramine Credit Risk Assessment, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+70,該当するものはありません。
+71,"*   User Question: Extract parts from the meeting minutes of ""青嶺不動産アセットマネジメント"" (Seirei Real Estate Asset Management) that are bold, underlined, and italicized simultaneously.
+    *   Context: ""該当する情報が見つかりませんでした。"" (No corresponding information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing that matches).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and state the conclusion first.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No corresponding information was found.)
+
+    *   Since the context says no information was found, I must follow Constraint #2: ""該当するものはありません"" (There is nothing that matches).
+
+    *   ""該当するものはありません"" (There is nothing that matches).
+該当するものはありません。"
+72,"*   User Question: ""KSSにおいて、データエンジニアが担当するタスクIDはいくつありますか。"" (How many task IDs are handled by data engineers in KSS?)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and state the conclusion first.
+
+    *   The context explicitly states ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding KSS or data engineers' task IDs, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+73,該当するものはありません。
+74,"*   User Question: List the changes related to project execution (案件遂行) between ""青葉与信マネジメントの提案書_v1.pptx"" and ""提案書_v2.pptx"".
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"".
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding the changes between the two files, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable.)
+該当するものはありません。"
+75,"*   User Question: ""MINAMINOのPP内のPL案において、モデル構築は第何週に実施することになっていますか。"" (In the PL plan within the PP of MINAMINO, in which week is the model construction scheduled to be implemented?)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding the question, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+76,"*   User Question: ""AOMINEの契約条件において、契約単価が現状よりも2,000円高く、実績工数が11.2時間少なかった場合、税込請求金額は、実際の税込請求金額と比べていくら変動しますか。"" (In AOMINE's contract terms, if the contract unit price is 2,000 yen higher than current and the actual man-hours were 11.2 hours less, how much would the tax-included billing amount change compared to the actual tax-included billing amount?)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context explicitly states ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Therefore, I cannot answer the specific calculation requested because the necessary data (current unit price, current man-hours, tax rate, etc.) is not in the context.
+
+    *   According to Constraint 2: ""該当するものはありません"" (There is nothing applicable).
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+77,該当するものはありません。
+78,"*   User Question: ""ひがし丘の契約条件において、ACTHが200時間を超えた場合の精算方法に関する規定内容を答えてください。"" (Regarding the contract conditions for Higashioka, please state the regulations concerning the settlement method when ACTH exceeds 200 hours.)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and state the conclusion first.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding the question, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+79,該当するものはありません。
+80,"*   User Question: ""In the `train.xlsx` of the Toto Jinzai Platform, please state the extraction conditions and aggregation contents of the cells highlighted in yellow on Sheet2.""
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and state the conclusion first.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding `train.xlsx`, Sheet2, yellow highlights, extraction conditions, or aggregation contents, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+81,"*   User Question: Extract the bolded parts in the contract with Kyobashi Shinkyo Solutions (京橋信用ソリューションズ).
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information about the contract or bolded parts, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+82,該当するものはありません。
+83,該当するものはありません。
+84,"*   User Question: ""東都人材プラットフォームの最終報告書で分析結果が記載されている中で、モデル毎のF1スコアがランキング形式で記載されているページ数を教えてください。"" (In the final report of the Toto Human Resources Platform, among the pages where analysis results are described, please tell me the page number where F1 scores for each model are listed in ranking format.)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context says no information was found, I must follow Constraint #2: ""該当するものはありません"" (There is nothing applicable).
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+85,"*   User Question: ""List the KPI items set in the final report of Aoba Biomedical Devices that are marked as unachieved."" (青葉バイオメディカル機器の最終報告において、設定されたKPIとして未達成とされている項目を挙げてください。)
+    *   Context: ""No relevant information was found."" (該当する情報が見つかりませんでした。)
+    *   Role: Internal AI assistant for Data Astel.
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Therefore, I cannot answer the specific question about Aoba Biomedical Devices' KPIs because the information is not in the provided context.
+
+    *   Constraint 2 says: ""If no information is found, answer '該当するものはありません' (There is nothing applicable).""
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+86,"*   User Question: ""How many people in total are listed with roles as the DA implementation structure in each project's PP, Contract, PLAN, and FR?"" (各案件のPP・契約書・PLAN・FRにおいて、DA側の実施体制として役割付きで記載されている人物は全部で何人ですか。)
+    *   Context: ""No relevant information was found."" (該当する情報が見つかりませんでした。)
+    *   Constraints:
+        1.  Strict adherence to context (do not include info not in context).
+        2.  If no info is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow format/units/etc.
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context explicitly states ""該当する情報が見つかりませんでした。"" (No relevant information was found).
+    *   According to Constraint 2: ""If no information matching the conditions is found, clearly answer '該当するものはありません'.""
+
+    *   Answer: 該当するものはありません。
+該当するものはありません。"
+87,"*   User Question: List all project abbreviations (案件略称) for completed projects (完了案件) where the internal management APR is ""APR-M1"" and the customer data sample size is 10,000 rows or more.
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There are no applicable items).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information about projects, APRs, or sample sizes, I cannot fulfill the request to list project abbreviations.
+    *   According to Constraint 2: ""If no information is found, answer '該当するものはありません' (There are no applicable items).""
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+88,該当するものはありません。
+89,"*   User Question: ""京橋信用ソリューションズのスケジュール.xlsxにおいて、フェーズNo6にて最後に開始するタスク名は何ですか。"" (In ""Kyobashi Shinyo Solutions Schedule.xlsx"", what is the name of the task that starts last in Phase No. 6?)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding ""京橋信用ソリューションズのスケジュール.xlsx"" or ""フェーズNo6"", I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+90,"*   User Question: ""青潮モビリティサービスのスケジュール.xlsxにおいて、バッファとして使用した工数の合計は何時間ですか。"" (In ""Aoshio Mobility Service Schedule.xlsx"", what is the total number of man-hours used as buffer?)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and state the conclusion first.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context says no information was found, I must follow Constraint #2: ""該当するものはありません"" (There is nothing applicable).
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+91,"*   User Question: ""京橋信用ソリューションズの顧客データにおいて、目的変数と最も強い負の相関を持つカラムは何ですか。"" (In the customer data of Kyobashi Credit Solutions, which column has the strongest negative correlation with the target variable?)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing that matches).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and state the conclusion first.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding the correlation of columns in Kyobashi Credit Solutions' customer data, I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing that matches).
+該当するものはありません。"
+92,該当するものはありません。
+93,該当するものはありません。
+94,該当するものはありません。
+95,"*   User Question: Compare ""青嶺不動産アセットマネジメントのスケジュール_r1.xlsx"" and ""スケジュール_r2.xlsx"" and list changes related to project execution, excluding changes from ""not started"" to ""completed"".
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Use natural expressions.
+        6.  Be concise and start with the conclusion.
+
+    *   The context provided is ""該当する情報が見つかりませんでした。"" (No relevant information found.)
+    *   Since the context contains no information about the Excel files or their contents, I cannot answer the question based on the provided context.
+
+    *   According to Constraint 2: ""If no information is found that meets the conditions, clearly answer '該当するものはありません'.""
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+96,"*   User Question: ""青葉与信マネジメントのチェックポイント2として設定されている内容に関連するタスクIDを教えてください。"" (Please tell me the Task ID related to the content set as Checkpoint 2 of Aoba Credit Management.)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context explicitly states: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+
+    *   Since the context contains no information regarding ""青葉与信マネジメント"" or ""チェックポイント2"" or ""タスクID"", I must follow Constraint #2.
+
+    *   ""該当するものはありません"" (There is nothing applicable).
+該当するものはありません。"
+97,"*   User Question: Calculate the absolute difference between the values of two cells that have yellow highlights intersecting in `train.xlsx` for Aoba Biomedical Devices.
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strictly follow the context. Do not include information not in the context. Do not infer.
+        2.  If no information is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow specified formats/units/etc.
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context provided is ""該当する情報が見つかりませんでした。""
+    *   The question asks for a calculation based on a specific file (`train.xlsx`) and specific visual cues (yellow highlights).
+    *   Since the context contains no information about `train.xlsx` or any cell values, I cannot perform the calculation.
+
+    *   According to Constraint 2: ""If no information is found, answer '該当するものはありません' clearly.""
+
+    *   ""該当するものはありません""
+該当するものはありません。"
+98,"*   User Question: ""TM案件において、RATEが変更されたのは何年何月1日からと想定されますか。"" (In the TM project, from what year and month 1st is the RATE assumed to have changed?)
+    *   Context: ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Constraints:
+        1.  Strict adherence to context (do not include info not in context).
+        2.  If no info is found, answer ""該当するものはありません"" (There is nothing applicable).
+        3.  Follow format/units/etc.
+        4.  Maintain identifiers.
+        5.  Natural expression.
+        6.  Conciseness.
+
+    *   The context explicitly states ""該当する情報が見つかりませんでした。"" (No relevant information was found.)
+    *   Therefore, according to Constraint 2, I must answer ""該当するものはありません"".
+
+    *   Answer: 該当するものはありません。
+該当するものはありません。"
+99,該当するものはありません。
